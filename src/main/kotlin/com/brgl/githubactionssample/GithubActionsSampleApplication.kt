@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class GithubActionsSampleApplication
 
 fun main(args: Array<String>) {
-	runApplication<GithubActionsSampleApplication>(*args)
+    runApplication<GithubActionsSampleApplication>(*args)
 }
