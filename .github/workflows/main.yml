@@ -25,5 +25,5 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Run the Maven verify phase
-        run: mvn package
+      - name: Run the Maven test phase
+        run: mvn test
