@@ -27,6 +27,6 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      # Runs all test cases
-      - name: Run a multi-line script
-        run: mvn test
+      # Runs mvn compile test
+      - name: Run mvn compile test script
+        run: mvn compile test
