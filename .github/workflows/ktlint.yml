@@ -2,15 +2,15 @@ name: ktlint
 
 on:
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
-  jobs:
-    ktlint:
-      runs-on: ubuntu-latest
+jobs:
+  ktlint:
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: "checkout"
-          uses: actions/checkout@v2
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@v2
 
-        - name: "ktlint"
-          uses: "vroy/gha-kotlin-linter@v1"
+      - name: "ktlint"
+        uses: "vroy/gha-kotlin-linter@v1"
