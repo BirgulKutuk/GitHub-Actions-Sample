@@ -13,4 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: "format with ktlint"
-        uses: "vroy/gha-kotlin-linter@v1"
+        run: |
+          "vroy/gha-kotlin-linter@v1"
+          git add --all
+          git commit -m "code automatically formatted with ktlint"
