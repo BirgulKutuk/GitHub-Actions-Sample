@@ -14,6 +14,6 @@ jobs:
 
       - name: "format with ktlint"
         run: |
-          "vroy/gha-kotlin-linter@v1"
+          vroy/gha-kotlin-linter@v1
           git add --all
           git commit -m "code automatically formatted with ktlint
