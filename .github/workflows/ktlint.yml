@@ -18,5 +18,5 @@ jobs:
       - name: "git add & git commit"
         if: failure()
         run: |
-          git add --all
-          git commit -m "code automatically formatted with ktlint
+          "git add --all"
+          "git commit -m "code automatically formatted with ktlint"
