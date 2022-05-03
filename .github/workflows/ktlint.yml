@@ -14,6 +14,8 @@ jobs:
 
       - name: "format with ktlint"
         uses: "vroy/gha-kotlin-linter@v1"
+
+      - name: "git add & git commit"
         if: failure()
         run: |
           git add --all
