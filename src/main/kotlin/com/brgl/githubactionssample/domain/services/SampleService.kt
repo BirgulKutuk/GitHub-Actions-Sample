@@ -14,5 +14,6 @@ fun test_PR() {
 
 fun test_2()
 {
-    print("test")
+    print("test 2")
+    
 }
