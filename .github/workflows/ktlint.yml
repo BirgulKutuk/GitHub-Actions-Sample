@@ -1,4 +1,4 @@
-name: ktlint
+name: CI-format-with-ktlint
 
 on:
   pull_request:
@@ -9,11 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "checkout"
-        uses: actions/checkout@v2
-          with:
-            repository: ${{ github.event.pull_request.head.repo.full_name }}
-            ref: ${{ github.event.pull_request.head.ref }}
+      - uses: actions/checkout@v2
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: "format with ktlint"
         run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:format"
@@ -25,5 +24,3 @@ jobs:
           git status
           git commit -m "code automatically formatted with ktlint"
           git status
-#          git push --all
-#          git status
