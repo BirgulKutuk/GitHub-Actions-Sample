@@ -12,6 +12,11 @@ jobs:
       - name: "checkout"
         uses: actions/checkout@v2
 
+      - name: "reset --hard"
+        run: |
+          git reset --hard
+          git status
+
       - name: "format with ktlint"
         run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:format"
 
