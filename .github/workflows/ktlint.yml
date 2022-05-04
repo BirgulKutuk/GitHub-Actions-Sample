@@ -15,11 +15,6 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
 
-      - name: "reset --hard"
-        run: |
-          git reset --hard
-          git status
-
       - name: "format with ktlint"
         run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:format"
 
@@ -27,8 +22,5 @@ jobs:
         run: |
           git config --global user.name 'BRGL'
           git add --all
-          git status
           git commit -m "code automatically formatted with ktlint"
-          git status
-          git push --all
-          git status
+          git push
