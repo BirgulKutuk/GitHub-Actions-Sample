@@ -16,7 +16,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: "check format with ktlint"
-        continue-on-error: true
+        if: always()
         run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:check"
 
       - name: "format with ktlint"
@@ -26,7 +26,7 @@ jobs:
       - name: "commit changes"
         if: failure()
         run: |
-          git config --global user.name 'BRGL'
+          git config --global user.name 'ktlint'
           git add --all
           git commit -m "code automatically formatted with ktlint"
           git push
