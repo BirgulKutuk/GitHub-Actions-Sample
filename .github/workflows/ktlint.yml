@@ -26,7 +26,6 @@ jobs:
         if: failure()
         run: |
           git config --global user.name 'ktlint'
-          set +e
           git add --all
           git commit -m "code automatically formatted with ktlint"
           git push
