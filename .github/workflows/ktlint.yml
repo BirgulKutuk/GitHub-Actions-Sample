@@ -1,0 +1,31 @@
+name: ktlint
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ktlint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@v2
+
+      - name: "reset --hard"
+        run: |
+          git reset --hard
+          git status
+
+      - name: "format with ktlint"
+        run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:format"
+
+      - name: "commit changes"
+        run: |
+          git config --global user.name 'BRGL'
+          git add --all
+          git status
+          git commit -m "code automatically formatted with ktlint"
+          git status
+          git push --all
+          git status
