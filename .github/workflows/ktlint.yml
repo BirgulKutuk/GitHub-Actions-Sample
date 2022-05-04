@@ -13,11 +13,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: "format with ktlint"
-        uses: "vroy/gha-kotlin-linter@v1"
-
-      - name: "git add & git commit"
-        if: failure()
         run: |
+          "vroy/gha-kotlin-linter@v1"
           git config --global user.name 'ktlint'
           git add --all
           git commit -m 'code automatically formatted with ktlint'
