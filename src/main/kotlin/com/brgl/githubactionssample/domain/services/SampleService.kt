@@ -10,3 +10,9 @@ fun test_PR() {
     print("ktlint auto format antrun")
     
 }
+
+
+fun test_2()
+{
+    print("test")
+}
