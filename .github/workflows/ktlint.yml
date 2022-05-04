@@ -20,4 +20,4 @@ jobs:
           git add --all
           git config --global user.name 'BRGL'
           git commit -m 'code automatically formatted with ktlint'
-          git push
+          git push --all
