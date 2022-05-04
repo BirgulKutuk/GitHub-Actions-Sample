@@ -27,5 +27,5 @@ jobs:
           git status
           git commit -m "code automatically formatted with ktlint"
           git status
-          git push --all
+          git push origin
           git status
