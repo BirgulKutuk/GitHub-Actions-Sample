@@ -17,7 +17,10 @@ jobs:
 
       - name: "commit changes"
         run: |
-          git add --all
           git config --global user.name 'BRGL'
-          git commit -m 'code automatically formatted with ktlint'
+          git add --all
+          git status
+          git commit -m "code automatically formatted with ktlint"
+          git status
           git push --all
+          git status
