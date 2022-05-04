@@ -15,6 +15,9 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
 
+      - name: "check format with ktlint"
+        run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:check"
+
       - name: "format with ktlint"
         run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:format"
 
