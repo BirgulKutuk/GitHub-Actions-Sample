@@ -17,4 +17,6 @@ jobs:
 
       - name: "git add & git commit"
         if: failure()
-        run: git commit -m 'code automatically formatted with ktlint'
+        run: |
+          git config --global user.name 'ktlint'
+          git commit -m 'code automatically formatted with ktlint'
