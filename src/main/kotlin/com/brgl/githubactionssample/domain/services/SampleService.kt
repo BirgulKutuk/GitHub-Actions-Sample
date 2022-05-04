@@ -8,8 +8,11 @@ fun test_PR() {
 //    print("without PR merge directly")
 //    print("without PR merge directly after add rule to settings 2")
     print("ktlint auto format antrun")
+
 }
 
-fun test_2() {
+
+fun test_2()
+{
     print("test")
 }
