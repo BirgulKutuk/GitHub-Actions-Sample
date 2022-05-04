@@ -19,4 +19,5 @@ jobs:
         if: failure()
         run: |
           git config --global user.name 'ktlint'
+          git add --all
           git commit -m 'code automatically formatted with ktlint'
