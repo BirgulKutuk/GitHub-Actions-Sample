@@ -13,4 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: "format with ktlint"
-        run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:format"
+        run: |
+          "mvn com.github.gantsign.maven:ktlint-maven-plugin:format"
+          git add --all
+          git commit -m 'code automatically formatted with ktlint'
