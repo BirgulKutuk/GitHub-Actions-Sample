@@ -16,7 +16,6 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: "check format with ktlint"
-        if: always()
         run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:check"
 
       - name: "format with ktlint"
