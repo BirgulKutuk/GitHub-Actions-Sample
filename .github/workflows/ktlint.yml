@@ -19,9 +19,11 @@ jobs:
         run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:check"
 
       - name: "format with ktlint"
+        if: failure()
         run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:format"
 
       - name: "commit changes"
+        if: failure()
         run: |
           git config --global user.name 'BRGL'
           git add --all
