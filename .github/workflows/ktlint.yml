@@ -24,6 +24,7 @@ jobs:
 
       - name: "commit changes"
         if: success()
+        continue-on-error: true
         run: |
           git config --global user.name 'ktlint'
           git add --all
