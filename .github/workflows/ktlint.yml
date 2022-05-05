@@ -7,8 +7,6 @@ on:
 jobs:
   ktlint:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
 
     steps:
       - name: "checkout"
@@ -19,6 +17,7 @@ jobs:
 
       - name: "check format with ktlint"
         run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:check"
+        continue-on-error: true
 
       - name: "format with ktlint"
         if: failure()
