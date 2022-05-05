@@ -14,5 +14,4 @@ fun test_2() {
     print("test 2")
 
     print("test 3")
-    print("4")
 }
