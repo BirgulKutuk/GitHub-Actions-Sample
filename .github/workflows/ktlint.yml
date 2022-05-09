@@ -17,8 +17,7 @@ jobs:
 
       - name: "check with ktlint"
         id: ktCheck
-        run: |
-          "mvn -B com.github.gantsign.maven:ktlint-maven-plugin:check | grep -v ' Download(ing|ed) '"
+        run: "mvn -B com.github.gantsign.maven:ktlint-maven-plugin:check | grep -v ' Download(ing|ed) '"
         continue-on-error: true
 
       - name: "format with ktlint"
