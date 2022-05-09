@@ -7,8 +7,6 @@ on:
 jobs:
   ktlint:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
 
     steps:
       - name: "checkout"
@@ -17,17 +15,19 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
 
-      - name: "check format with ktlint"
-        run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:check"
+      - name: "check with ktlint"
+        id: ktCheck
+        run: "mvn -B com.github.gantsign.maven:ktlint-maven-plugin:check | grep -v ' Downloading '"
+        continue-on-error: true
 
       - name: "format with ktlint"
-        if: failure()
-        run: "mvn com.github.gantsign.maven:ktlint-maven-plugin:format"
+        if: steps.ktCheck.outcome != 'success'
+        run: "mvn -B com.github.gantsign.maven:ktlint-maven-plugin:format"
 
       - name: "commit changes"
-        if: failure()
+        if: steps.ktCheck.outcome != 'success'
         run: |
           git config --global user.name 'ktlint'
           git add --all
-          git commit -m "code automatically formatted with ktlint"
+          git diff --quiet && git diff --staged --quiet || git commit -am 'Code automatically formatted with ktlint'
           git push
