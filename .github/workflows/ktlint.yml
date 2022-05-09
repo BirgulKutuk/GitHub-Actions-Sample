@@ -20,7 +20,7 @@ jobs:
         continue-on-error: true
         run: |
           mvn -B com.github.gantsign.maven:ktlint-maven-plugin:check
-          "egrep -v ' Download(ing|ed) '"
+          egrep -v ' Download(ing|ed) '
 
       - name: "format with ktlint"
         if: steps.ktCheck.outcome != 'success'
