@@ -15,8 +15,8 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
 
-      - id: ktCheck
-        name: "check with ktlint"
+      - name: "check with ktlint"
+        id: ktCheck
         continue-on-error: true
         run: "mvn -B com.github.gantsign.maven:ktlint-maven-plugin:check"
 
