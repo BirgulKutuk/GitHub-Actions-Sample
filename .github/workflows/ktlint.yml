@@ -18,7 +18,7 @@ jobs:
       - id: ktCheck
         name: "check with ktlint"
         continue-on-error: true
-        run: "mvn -B com.github.gantsign.maven:ktlint-maven-plugin:check | egrep -v ' Download(ing|ed) '"
+        run: "mvn -B com.github.gantsign.maven:ktlint-maven-plugin:check"
 
       - name: "format with ktlint"
         if: steps.ktCheck.outcome != 'success'
