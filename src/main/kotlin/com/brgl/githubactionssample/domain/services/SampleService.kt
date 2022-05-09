@@ -1,7 +1,5 @@
 package com.brgl.githubactionssample.domain.services
 
-import java.time.Instant
-
 class SampleService
 
 fun test_PR() {
@@ -12,15 +10,13 @@ fun test_PR() {
     print("ktlint auto format antrun")
 }
 
-fun test_2()
-{
+fun test_2() {
     print("test 2")
 
     print("test 3")
 }
 
-data class Location
-    (
+data class Location(
     val id: String,
     val code: String,
     val name: String
